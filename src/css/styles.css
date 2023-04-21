@@ -27,7 +27,8 @@ body {
   min-height: 100%;
 }
 #tripArea {
-  margin: 25px 10px;
+  margin: 20px 10px;
+  padding: 32px 32px;
   
 }
 #totalsArea {
