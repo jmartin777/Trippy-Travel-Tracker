@@ -1,9 +1,9 @@
 html *{
   font-size: 1em !important;
-     color: #e9d8d8 !important;
+     color: #ff8c28 !important;
      font-family: Arial !important;
      font-weight: bold;
-     text-shadow:0px 0px 10px 0px #45B8AC !important;
+     text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000,-1px 2px 0 #000000, 1px 2px 0 #000000;
   }
 
 body {
@@ -12,4 +12,25 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
+  height: 100%;
+}
+
+#left{
+  margin: 10px 10px;
+  background-image: url('/dist/images/AdobeStock_tall.png');
+  background-repeat: no-repeat;
+  background-size: fill;
+  /* background-position: center center; */
+  width: auto;
+  height: 1000px;
+  
+  min-height: 100%;
+}
+#tripArea {
+  margin: 25px 10px;
+  
+}
+#totalsArea {
+  margin: 75px 10px;
+  
 }

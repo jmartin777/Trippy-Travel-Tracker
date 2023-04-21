@@ -312,12 +312,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _dist_images_AdobeStock_571093886_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _dist_images_AdobeStock_tall_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 // Imports
 
 
+
+
+
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_dist_images_AdobeStock_571093886_jpg__WEBPACK_IMPORTED_MODULE_3__.default);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_dist_images_AdobeStock_tall_png__WEBPACK_IMPORTED_MODULE_4__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html *{\n  font-size: 1em !important;\n     color: #e9d8d8 !important;\n     font-family: Arial !important;\n     font-weight: bold;\n     text-shadow:0px 0px 10px 0px #45B8AC !important;\n  }\n\nbody {\n  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);\n}\n", "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;KACtB,yBAAyB;KACzB,6BAA6B;KAC7B,iBAAiB;KACjB,+CAA+C;EAClD;;AAEF;EACE,kFAAkF;AACpF","sourcesContent":["html *{\n  font-size: 1em !important;\n     color: #e9d8d8 !important;\n     font-family: Arial !important;\n     font-weight: bold;\n     text-shadow:0px 0px 10px 0px #45B8AC !important;\n  }\n\nbody {\n  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html *{\n  font-size: 1em !important;\n     color: #ff8c28 !important;\n     font-family: Arial !important;\n     font-weight: bold;\n     text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000,-1px 2px 0 #000000, 1px 2px 0 #000000;\n  }\n\nbody {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-attachment: fixed;\n  background-size: cover;\n  background-position: center center;\n  height: 100%;\n}\n\n#left{\n  margin: 10px 10px;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n  background-repeat: no-repeat;\n  background-size: fill;\n  /* background-position: center center; */\n  width: auto;\n  height: 1000px;\n  \n  min-height: 100%;\n}\n#tripArea {\n  margin: 25px 10px;\n  \n}\n#totalsArea {\n  margin: 75px 10px;\n  \n}", "",{"version":3,"sources":["webpack://./src/css/styles.css"],"names":[],"mappings":"AAAA;EACE,yBAAyB;KACtB,yBAAyB;KACzB,6BAA6B;KAC7B,iBAAiB;KACjB,0FAA0F;EAC7F;;AAEF;EACE,yDAA8D;EAC9D,4BAA4B;EAC5B,4BAA4B;EAC5B,sBAAsB;EACtB,kCAAkC;EAClC,YAAY;AACd;;AAEA;EACE,iBAAiB;EACjB,yDAAyD;EACzD,4BAA4B;EAC5B,qBAAqB;EACrB,wCAAwC;EACxC,WAAW;EACX,cAAc;;EAEd,gBAAgB;AAClB;AACA;EACE,iBAAiB;;AAEnB;AACA;EACE,iBAAiB;;AAEnB","sourcesContent":["html *{\n  font-size: 1em !important;\n     color: #ff8c28 !important;\n     font-family: Arial !important;\n     font-weight: bold;\n     text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000,-1px 2px 0 #000000, 1px 2px 0 #000000;\n  }\n\nbody {\n  background-image: url('/dist/images/AdobeStock_571093886.jpg');\n  background-repeat: no-repeat;\n  background-attachment: fixed;\n  background-size: cover;\n  background-position: center center;\n  height: 100%;\n}\n\n#left{\n  margin: 10px 10px;\n  background-image: url('/dist/images/AdobeStock_tall.png');\n  background-repeat: no-repeat;\n  background-size: fill;\n  /* background-position: center center; */\n  width: auto;\n  height: 1000px;\n  \n  min-height: 100%;\n}\n#tripArea {\n  margin: 25px 10px;\n  \n}\n#totalsArea {\n  margin: 75px 10px;\n  \n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -432,13 +441,42 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 6 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/turing-logo.png");
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = url && url.__esModule ? url.default : url;
+
+  if (typeof url !== "string") {
+    return url;
+  } // If url is already wrapped in quotes, remove them
+
+
+  if (/^['"].*['"]$/.test(url)) {
+    // eslint-disable-next-line no-param-reassign
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
+};
 
 /***/ }),
 /* 7 */
@@ -458,7 +496,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/login-button.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/AdobeStock_tall.png");
 
 /***/ }),
 /* 9 */
@@ -468,7 +506,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/AdobeStock_wide.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/turing-logo.png");
 
 /***/ }),
 /* 10 */
@@ -478,10 +516,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/AdobeStock_tall.png");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/AdobeStock_571093886.jpg");
 
 /***/ }),
 /* 11 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/login-button.png");
+
+/***/ }),
+/* 12 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/AdobeStock_wide.png");
+
+/***/ }),
+/* 13 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("images/AdobeStock_tall.png");
+
+/***/ }),
+/* 14 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -564,12 +632,12 @@ var __webpack_exports__ = {};
 (() => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _images_turing_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var _images_AdobeStock_571093886_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
-/* harmony import */ var _images_login_button_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
-/* harmony import */ var _images_AdobeStock_wide_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
-/* harmony import */ var _images_AdobeStock_tall_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
-/* harmony import */ var _images_AdobeStock_430930840_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(11);
+/* harmony import */ var _images_turing_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _images_AdobeStock_571093886_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _images_login_button_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
+/* harmony import */ var _images_AdobeStock_wide_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
+/* harmony import */ var _images_AdobeStock_tall_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13);
+/* harmony import */ var _images_AdobeStock_430930840_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(14);
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
