@@ -1,6 +1,10 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
+
+import Dashboard from './dashBoard';
+import Api from'./apiCalls';
+
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/styles.css';
 
@@ -12,5 +16,7 @@ import './images/AdobeStock_wide.png'
 import './images/AdobeStock_tall.png'
 import './images/AdobeStock_430930840.png'
 
+const api = new Api("http://localhost:3001/api/v1/");
 
+api.getObj("trips")
 console.log('This is the JavaScript entry file - your code begins here.');

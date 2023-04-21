@@ -1,0 +1,26 @@
+traveler class info    -> display Data    --> data to search with  <--data to access from
++++++++++++++++               
+id -->  trips                 
+name ->             
+travelerType ->
+
+Trips Class info
+++++++++++++++++
+id
+userID  <--
+destinationID  -->
+travelers -> 
+date  ->
+duration ->
+status ->
+suggestedActivities ->
+
+Destinations Class info
+++++++++++++++++++
+id <--
+destination ->
+estimatedLodgingCostPerDay ->
+estimatedFlightCostPerPerson ->
+image ->
+alt ->
+
