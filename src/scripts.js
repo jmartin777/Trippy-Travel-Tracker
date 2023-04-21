@@ -17,6 +17,22 @@ import './images/AdobeStock_tall.png'
 import './images/AdobeStock_430930840.png'
 
 const api = new Api("http://localhost:3001/api/v1/");
+const dashboard = new Dashboard();
 
-api.getObj("trips")
-console.log('This is the JavaScript entry file - your code begins here.');
+let traveler = {};
+(async () => {
+    traveler = await api.getObj('travelers/'+"1");
+    // console.log(objData);
+  })();
+  
+setTimeout(() => {
+    
+    console.log(traveler.name)
+    console.log(dashboard.getUserByID("567"));
+ }, 250);
+
+console.log(dashboard.getUserByID("567"));
+
+
+
+

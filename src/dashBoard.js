@@ -18,8 +18,8 @@ class Dashboard {
         this.alt = "";
     }
 
-    getUserbyID(){
-        return 0;
+    getUserByID(data){
+        return data;
     }
 }
 export default Dashboard;

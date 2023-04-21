@@ -7,14 +7,17 @@ class Api {
     }
 
     //Retrieve Data from a given endpoint
-    getObj(endpoint){
-        
-        fetch(this.url + endpoint).then(response => response.json()).then(data => {
-            // Do something with the parsed data
-           console.log(data);
-          })
-        
+    //Retrieve Data from a given endpoint
+  async getObj(endpoint) {
+    try {
+      const response = await fetch(this.url + endpoint);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
     }
+  }
+  
         
     
 
