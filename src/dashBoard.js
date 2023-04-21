@@ -2,7 +2,24 @@
 
 class Dashboard {
     constructor() {
+        this.userID = 0;
+        this.userName = "";
+        this.userType = "";
+        this.destinationID = "";
+        this.travelers = 0;
+        this.date  = "";
+        this.duration = 0;
+        this.status = "";
+        this.suggestedActivities = []; 
+        this.destination = "";
+        this.estimatedLodgingCostPerDay = 0;
+        this.estimatedFlightCostPerPerson = 0;
+        this.image = "";
+        this.alt = "";
+    }
 
+    getUserbyID(){
+        return 0;
     }
 }
-export default Dashboard
+export default Dashboard;
