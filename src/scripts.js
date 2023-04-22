@@ -3,8 +3,10 @@
 
 
 import Dashboard from './dashBoard';
-import Api from'./apiCalls';
 
+let destinations
+let travelers
+let trips 
 // An example of how you tell webpack to use a CSS (SCSS) file
 import './css/styles.css';
 
@@ -16,22 +18,33 @@ import './images/AdobeStock_wide.png'
 import './images/AdobeStock_tall.png'
 import './images/AdobeStock_430930840.png'
 
-const api = new Api("http://localhost:3001/api/v1/");
 const dashboard = new Dashboard();
+window.addEventListener('load', () => {
+dashboard.api.fetchAll().then(data => {
+    travelers = data[0]
+    trips = data[1]
+    destinations = data[2]
+    parseData()
+    writeDashboard()
+  })
+})
 
-let traveler = {};
-(async () => {
-    traveler = await api.getObj('travelers/'+"1");
-    // console.log(objData);
-  })();
-  
-setTimeout(() => {
+function parseData(){
+    dashboard.loadUser(3,travelers);
+    dashboard.loadUserTrips(trips);
+    dashboard.loadUserDestinations(destinations);
+    console.log(dashboard)
+
+}
+
+function writeDashboard(){
     
-    console.log(traveler.name)
-    console.log(dashboard.getUserByID("567"));
- }, 250);
+}
 
-console.log(dashboard.getUserByID("567"));
+
+
+
+
 
 
 

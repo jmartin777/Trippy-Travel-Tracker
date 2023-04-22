@@ -8,19 +8,19 @@ class Api {
 
     //Retrieve Data from a given endpoint
     //Retrieve Data from a given endpoint
-  async getObj(endpoint) {
-    try {
-      const response = await fetch(this.url + endpoint);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  
+    fetchData = (url) => {
+        return fetch(url)
+        .then(response => response.json())
+        };
         
-    
-
+    fetchAll = () => {
+        return Promise.all([
+        this.fetchData('http://localhost:3001/api/v1/travelers'),
+        this.fetchData('http://localhost:3001/api/v1/trips'),
+        this.fetchData('http://localhost:3001/api/v1/destinations'),
+        ]);
+    } 
+  
     //Post an JSON Object to the Base URL using the given Endpoint and OBJ 
     /*  const data = { name: 'John Doe', email: 'johndoe@example.com' };
         postObj('travelers', data)
