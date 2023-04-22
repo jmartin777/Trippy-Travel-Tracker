@@ -1,16 +1,15 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
-
-import Dashboard from './dashBoard';
-
 let destinations
 let travelers
 let trips 
 // An example of how you tell webpack to use a CSS (SCSS) file
-import './css/styles.css';
+
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
+import Dashboard from './dashBoard';
+import './css/styles.css';
 import './images/turing-logo.png'
 import './images/AdobeStock_571093886.jpg'
 import './images/login-button.png'
@@ -40,6 +39,11 @@ function parseData(){
 }
 
 function writeDashboard(){
+    document.getElementById('pastTrips').innerHTML = "test";
+    document.getElementById('upcomingTrips').innerHTML = "test";
+    document.getElementById('pendingTrips').innerHTML = "test";
+    document.getElementById('agentFees').innerHTML = "test";
+    document.getElementById('totalSpent').innerHTML = "test";
 
 }
 
