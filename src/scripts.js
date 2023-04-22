@@ -18,6 +18,7 @@ import './images/AdobeStock_wide.png'
 import './images/AdobeStock_tall.png'
 import './images/AdobeStock_430930840.png'
 
+
 const dashboard = new Dashboard();
 window.addEventListener('load', () => {
 dashboard.api.fetchAll().then(data => {
@@ -30,7 +31,8 @@ dashboard.api.fetchAll().then(data => {
 })
 
 function parseData(){
-    dashboard.loadUser(3,travelers);
+    const randomUser = Math.floor(Math.random() * travelers.travelers.length);
+    dashboard.loadUser(randomUser,travelers);
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard)
@@ -38,7 +40,7 @@ function parseData(){
 }
 
 function writeDashboard(){
-    
+
 }
 
 
