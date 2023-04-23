@@ -35,13 +35,15 @@ function parseData(){
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard)
-
+    dashboard.sortTrips();
+    console.log(dashboard.pastDates)
+    console.log(dashboard.presentDates)
+    console.log(dashboard.futureDates)
 }
 
 function writeDashboard(){
-    document.getElementById('pastTrips').innerHTML = "test";
-    document.getElementById('upcomingTrips').innerHTML = "test";
-    document.getElementById('pendingTrips').innerHTML = "test";
+    dashboard.makeDateTable();
+    
     document.getElementById('agentFees').innerHTML = "test";
     document.getElementById('totalSpent').innerHTML = "test";
 

@@ -46,6 +46,27 @@ class Dashboard {
     return result;
   }
 
+  sortTrips() {
+    const today = new Date().toISOString().split('T')[0].replace("-","/").replace("-","/");
+    this.pastDates = this.date.filter(date => date < today)
+    .sort((a,b) => new Date(b) - new Date(a))
+    this.presentDates = this.date.filter(date => date === today)
+    .sort((a,b) => new Date(b) - new Date(a))
+    this.futureDates =this.date.filter(date => date > today)
+    .sort((a,b) => new Date(a) - new Date(b))
+    console.log(today)
+  }
+    calculateTotalSpent(trips, destinations) {
+        return trips.reduce((acc, trip) => {
+        const { travelers, destinationID } = trip;
+        const destination = destinations.find(d => d.id === destinationID);
+        const lodgingCost = destination.estimatedLodgingCostPerDay * trip.duration * travelers;
+        const flightCost = destination.estimatedFlightCostPerPerson * travelers;
+        const totalCost = lodgingCost + flightCost;
+        return acc + totalCost;
+    }, 0);
+  }
+
   loadUserTrips(inObj) {
     const result = inObj.trips.forEach((trip) => {
       //console.log(trip.userID === this.userID)
@@ -60,6 +81,8 @@ class Dashboard {
     });
     return result;
   }
+
+
   
   loadUserTripsTest(tripsData) {
     const userTrips = tripsData.trips.filter((trip) => trip.userID === this.userId);
@@ -104,11 +127,26 @@ class Dashboard {
       }
     });
   }
+  
+  makeDateTable() {
+    const table = document.createElement('table');
+    const headerRow = document.createElement('tr');
+    headerRow.innerHTML = '<th>Destination|</th><th>Past Dates|</th><th>Present Dates|</th><th>Future Dates|</th>';
+    table.appendChild(headerRow);
+    // Loop through each date and create a row with the corresponding name
+    this.date.forEach((date, i) => {
+        const name = this.destination[i].split(",")[0] ? this.destination[i].split(",")[0]  : '';
+        const pastDate = this.pastDates.includes(date) ? date : '';
+        const presentDate = this.presentDates.includes(date) ? date : '';
+        const futureDate = this.futureDates.includes(date) ? date : '';
 
-  
-  
-  
-  
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${name}</td><td>${pastDate}</td><td>${presentDate}</td><td>${futureDate}</td>`;
+        table.appendChild(row);
+    });
+
+    document.getElementById('date-table').appendChild(table);
+    }
 }
 
 export default Dashboard;
