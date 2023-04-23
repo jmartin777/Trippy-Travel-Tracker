@@ -56,15 +56,12 @@ class Dashboard {
     .sort((a,b) => new Date(a) - new Date(b))
     console.log(today)
   }
-    calculateTotalSpent(trips, destinations) {
-        return trips.reduce((acc, trip) => {
-        const { travelers, destinationID } = trip;
-        const destination = destinations.find(d => d.id === destinationID);
-        const lodgingCost = destination.estimatedLodgingCostPerDay * trip.duration * travelers;
-        const flightCost = destination.estimatedFlightCostPerPerson * travelers;
-        const totalCost = lodgingCost + flightCost;
-        return acc + totalCost;
-    }, 0);
+    calculateTotalSpent() {
+       this.totalCosts = this.travelers.map((num, index) => (num * this.estimatedFlightCostPerPerson[index]) + (this.estimatedLodgingCostPerDay[index] * this.duration[index]))
+       .reduce((acc, val)=> acc + val,0)
+
+       this.agentFees = this.totalCosts * 0.10;
+   
   }
 
   loadUserTrips(inObj) {

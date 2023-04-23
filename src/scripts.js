@@ -43,9 +43,10 @@ function parseData(){
 
 function writeDashboard(){
     dashboard.makeDateTable();
+    dashboard.calculateTotalSpent();
     
-    document.getElementById('agentFees').innerHTML = "test";
-    document.getElementById('totalSpent').innerHTML = "test";
+    document.getElementById('agentFees').innerHTML = dashboard.agentFees;
+    document.getElementById('totalSpent').innerHTML = `$${dashboard.totalCosts + dashboard.agentFees}`;
 
 }
 
