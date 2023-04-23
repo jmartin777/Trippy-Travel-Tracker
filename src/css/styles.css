@@ -16,11 +16,10 @@ body {
 }
 
 #left{
-  margin: 10px 10px;
-  background-image: url('/dist/images/AdobeStock_tall.png');
+  margin: 10px 15px;
+  background-image: url('/dist/images/AdobeStock_wide.png');
   background-repeat: no-repeat;
   background-size: fill;
-  /* background-position: center center; */
   width: auto;
   height: 1000px;
   
@@ -28,10 +27,15 @@ body {
 }
 #tripArea {
   margin: 20px 10px;
-  Tpadding: 32px 32px;
+  padding: 32px 32px;
   
 }
 #totalsArea {
   margin: 75px 10px;
   
+}
+
+#date-table {
+  padding: 0px;
+  margin: 15px;
 }
