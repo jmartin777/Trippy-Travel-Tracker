@@ -21,11 +21,9 @@ class Booking{
         });
         
             this.numOfTrips = inObj2.trips.length
-            console.log(inObj2)
-
-
-       
+            console.log(inObj2) 
     }
+
 
     createBookingObj(userID, destinationID, travelers, date, duration) {
         const bookingObj = {
