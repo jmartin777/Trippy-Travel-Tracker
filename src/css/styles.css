@@ -81,7 +81,8 @@ h2{
 
 h3{
   background-color: transparent;
-  background-color: #58cff0;
+  /* background-color: #58cff0; */
+  font-weight: 500;
   border-radius: 25%;
   border: groove;
   width: 187px;
@@ -140,11 +141,30 @@ h3{
   text-align: center;
 }
 
-#content {
-  display: none;
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: center;
+#username{
+  background-color: transparent;
+  border-radius: 25%;
+  border: groove;
 }
 
+text{
+  background-color: transparent;
+}
 
+#password{
+  background-color: transparent;
+  border-radius: 25%;
+  border: groove;
+}
+
+#submit2{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+  margin: 12px;
+}
+
+#text{
+  color: #ff8c28
+}

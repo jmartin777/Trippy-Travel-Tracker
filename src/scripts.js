@@ -36,7 +36,7 @@ document.querySelector("#login-form form").addEventListener("submit", function(e
   function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    if (username === "myusername" && password === "mypassword") {
+    if (username === "traveler50" && password === "travel") {
       
       document.getElementById("login-form").style.display = "none";
       document.getElementById("content").style.display = "block";
@@ -47,9 +47,11 @@ document.querySelector("#login-form form").addEventListener("submit", function(e
   }
 
 window.addEventListener('load', () => {
-    // Login Function
-api.fetchAll(/* User ID on It.4 */).then(data => {
-    
+    document.querySelector("#login-form form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        login();
+    });
+    api.fetchAll(/* User ID on It.4 */).then(data => {
     travelers = data[0];
     trips = data[1];
     destinations = data[2];
@@ -63,7 +65,7 @@ api.fetchAll(/* User ID on It.4 */).then(data => {
 
 function parseDashboardData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
-    dashboard.loadUser(randomUser,travelers);
+    dashboard.loadUser(50,travelers);
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard);
@@ -111,7 +113,7 @@ function loadDestinationsDropBar() {
 
     api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
 
-    location.href = location.href;
+    // location.href = location.href;
     
     alert("Trip Submitted");
   });
