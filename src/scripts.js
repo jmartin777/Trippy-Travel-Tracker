@@ -88,7 +88,7 @@ function loadDestinationsDropBar() {
 
 
 
-submitButton.addEventListener('click', function(event) {
+   submitButton.addEventListener('click', function(event) {
     event.preventDefault(); 
     const destinationSelection = document.getElementById('destination').value
     const dateInput = document.getElementById('date').value;
@@ -102,10 +102,12 @@ submitButton.addEventListener('click', function(event) {
     })
     console.log(booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
 
-     api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
+    api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
 
-     location.href = location.href;
-  });
+    location.href = location.href;
+    
+    alert("Trip Submitted");
+});
       
 
 }
@@ -158,8 +160,8 @@ function checkInput(){
         document.getElementById('tripTotal').innerHTML = `$${tripTotal}`
     
      }
-         
-     
+    
+      
  }
  
 
