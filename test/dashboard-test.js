@@ -4,8 +4,6 @@ import { dashboardData } from './dashboard-test-data';
 
 const expect = chai.expect;
 
-
-
 describe('Dashboard', () => {
 
   describe('loadUser', () => {
