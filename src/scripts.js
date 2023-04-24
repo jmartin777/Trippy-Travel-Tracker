@@ -4,8 +4,8 @@
 let destinations
 let travelers
 let trips 
-// An example of how you tell webpack to use a CSS (SCSS) file
 
+// An example of how you tell webpack to use a CSS (SCSS) file
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import Dashboard from './dashBoard';
@@ -31,7 +31,7 @@ dashboard.api.fetchAll().then(data => {
 
 function parseData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
-    dashboard.loadUser(24,travelers);
+    dashboard.loadUser(randomUser,travelers);
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard)
