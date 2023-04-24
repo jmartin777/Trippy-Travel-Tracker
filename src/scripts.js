@@ -31,11 +31,12 @@ dashboard.api.fetchAll().then(data => {
 
 function parseData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
-    dashboard.loadUser(randomUser,travelers);
+    dashboard.loadUser(24,travelers);
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard)
-    dashboard.sortTrips();
+    dashboard.sortTripsByStatus();
+    dashboard.sortTripsByDate();
     console.log(dashboard.pastDates)
     console.log(dashboard.presentDates)
     console.log(dashboard.futureDates)
@@ -43,9 +44,8 @@ function parseData(){
 
 function writeDashboard(){
     dashboard.makeDateTable();
-    dashboard.calculateTotalSpent();
-    
-    document.getElementById('agentFees').innerHTML = dashboard.agentFees;
+    dashboard.calculateTotalSpent(); 
+    document.getElementById('agentFees').innerHTML = `$${dashboard.agentFees}`;
     document.getElementById('totalSpent').innerHTML = `$${dashboard.totalCosts + dashboard.agentFees}`;
 
 }
