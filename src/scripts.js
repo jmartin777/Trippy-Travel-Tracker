@@ -28,29 +28,34 @@ const booking = new Booking();
 const destinationInput = document.getElementById('destination')
 const submitButton = document.getElementById("submit");
 
-document.querySelector("#login-form form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    login();
-  });
 
   function login() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    if (username === "traveler50" && password === "travel") {
-      
+    
+    if (username === "traveler50" && password === "travel" ) {
+        document.cookie = "sessionId=1; path=/";
       document.getElementById("login-form").style.display = "none";
       document.getElementById("content").style.display = "block";
     } else {
-
+      document.cookie = "sessionId=0; path=/";
       alert("Invalid username or password");
     }
+    console.log(document.cookie)
   }
 
 window.addEventListener('load', () => {
     document.querySelector("#login-form form").addEventListener("submit", function(event) {
         event.preventDefault();
         login();
+        
     });
+    if (document.cookie==="sessionId=1"){
+        //document.cookie = `sessionId=1 , userId=${username} ; path=/`;
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }
+    console.log(document.cookie==="sessionId=1")
     api.fetchAll(/* User ID on It.4 */).then(data => {
     travelers = data[0];
     trips = data[1];
@@ -113,7 +118,7 @@ function loadDestinationsDropBar() {
 
     api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
 
-    // location.href = location.href;
+    location.href = location.href;
     
     alert("Trip Submitted");
   });
