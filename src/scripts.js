@@ -12,7 +12,7 @@ let trips
 import Dashboard from './dashBoard';
 import Booking from './booking';
 import Api from './apiCalls';
-import './css/styles.css';
+// import './css/styles.css';
 import './images/turing-logo.png';
 import './images/AdobeStock_571093886.jpg';
 import './images/login-button.png';
@@ -24,6 +24,13 @@ const api = new Api("http://localhost:3001/api/v1/");
 const dashboard = new Dashboard();
 const booking = new Booking();
 
+
+const destinationInput = document.getElementById('destination')
+const submitButton = document.getElementById("submit");
+
+
+
+
 window.addEventListener('load', () => {
     // Login Function
 api.fetchAll(/* User ID on It.4 */).then(data => {
@@ -33,9 +40,14 @@ api.fetchAll(/* User ID on It.4 */).then(data => {
     parseDashboardData();
     writeDashboardDisplay();
     parseBookingPageData();
+    loadDestinationsDropBar();
     
   })
 })
+
+
+
+
 
 function parseDashboardData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
@@ -59,10 +71,38 @@ function writeDashboardDisplay(){
 function parseBookingPageData(){
     booking.loadData(dashboard.userID,destinations,trips)
     
-    //post Booking with userID, destinationID, travelers, date, duration
-    //api.postObj("trips", booking.createBookingObj(24, 43, 2, "2023/03/16", 4))
-    
     console.log(booking)
+}
+
+function loadDestinationsDropBar() {
+    const option = document.createElement('option');
+    destinations.destinations.forEach(element => {
+    const option = document.createElement('option');
+        option.value = element.destination;
+        option.text = element.destination;
+        destinationInput.appendChild(option);
+   });
+
+   submitButton.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    const destinationSelection = document.getElementById('destination').value
+    const dateInput = document.getElementById('date').value;
+    const durationInput = document.getElementById('duration').value;
+    const travelersInput = document.getElementById('travelers').value;
+    let destinationIDSelection = 0;
+    destinations.destinations.filter((destination) => {
+        if(destination.destination == destinationSelection){
+            destinationIDSelection = destination.id;
+        }
+    })
+
+
+    
+    //post Booking with userID, destinationID, travelers, date, duration
+    console.log(booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
+     api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
+  });
+        
 }
 
 
