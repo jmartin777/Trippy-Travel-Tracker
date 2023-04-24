@@ -151,8 +151,34 @@ describe('loadUserDestinations', () => {
         expect(testDashboard.image).to.deep.equal([]);
         expect(testDashboard.alt).to.deep.equal([]);
     });
-    });
+  });
 });
+
+describe('Dashboard', () => {
+  describe('calculateTotalSpent', () => {
+    it('should calculate the total cost and agent fees for approved trips', function() {
+      const dashboard = new Dashboard();
+      dashboard.travelers = [1, 5];
+      dashboard.duration = [8, 18];
+      dashboard.estimatedLodgingCostPerDay = [70, 100];
+      dashboard.estimatedFlightCostPerPerson = [400, 780];
+      dashboard.status = ['approved', 'approved'];
+      dashboard.calculateTotalSpent(); 
+    });
+
+    it('should not include pending trips in the calculation', function() {
+      const dashboard = new Dashboard();
+      dashboard.travelers = [1, 5];
+      dashboard.duration = [8, 18];
+      dashboard.estimatedLodgingCostPerDay = [70, 100];
+      dashboard.estimatedFlightCostPerPerson = [400, 780];
+      dashboard.status = ['pending', 'approved'];
+      dashboard.calculateTotalSpent();
+    });
+  });
+});
+
+
 });
 
 

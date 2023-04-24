@@ -4,6 +4,7 @@ html *{
      font-family: Monaco !important;
      font-weight: normal;
      text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000,-1px 2px 0 #000000, 1px 2px 0 #000000;
+    
   }
 
 body {
@@ -16,26 +17,37 @@ body {
 }
 
 #left{
-  margin: 10px 15px;
+  margin: 65px 15px;
   background-image: url('/dist/images/AdobeStock_wide.png');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 40%;
-  height: 1200px;
+  width: 47%;
+  height: 505px;
+  
  
 }
 #tripArea {
   margin: 20px 10px;
   padding: 32px 32px;
+  
+
 }
 
 #totalsArea {
-  margin: 75px 10px;  
+  margin: 75px 250px; 
+
+ 
+}
+
+#total-spent{
+  margin: 0px 0px;
 }
 
 #date-table {
   padding: 0px;
   margin: 15px;
+  
+
 }
 
 #trip-request {
@@ -45,4 +57,84 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-left: 20px;
+  background-image: url('/dist/images/AdobeStock_wide.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 26%;
+  height: 500px;
+  
+  
 }
+
+th{
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+}
+
+h2{
+  border: 2px solid #1eccfc;
+  border-radius: 5%;
+  background-color: #58cff0;
+  width: 140px;
+  border-radius: 25%;
+  border: groove;
+}
+
+h3{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+  width: 187px;
+  
+}
+
+#date{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+}
+
+#id{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+}
+
+#destination{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+
+}
+
+#duration{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+}
+
+#travelers{
+  background-color: transparent;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+
+}
+#submit{
+  background-color: transparent;
+  background-color: #58cff0;
+  background-color: #58cff0;
+  border-radius: 25%;
+  border: groove;
+  height: 50px;
+  width: 100px;
+
+}
+
+
