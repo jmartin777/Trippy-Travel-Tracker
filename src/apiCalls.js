@@ -27,20 +27,23 @@ class Api {
         .then(result => console.log(result))
         .catch(error => console.error(error));
     */
+    
     postObj(endpoint, data){
-        postResult = (endpoint, data) => {
-            return fetch(this.url + endpoint, {
+        console.log(this.url + endpoint)
+        fetch(this.url + endpoint, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            headers: {"Content-Type": "application/json"}
+            
+            }).then(res => res.json())
+            .then(data => {
+                console.log(data);
             })
-            .then(response => response.json())
             .catch(error => console.error(error));
+
         };
-      return postResult;
-    }
+      
+    
 
     //Delete Trip By ID 
     deleteTrip(tripID){
