@@ -28,8 +28,23 @@ const booking = new Booking();
 const destinationInput = document.getElementById('destination')
 const submitButton = document.getElementById("submit");
 
+document.querySelector("#login-form form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    login();
+  });
 
+  function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username === "myusername" && password === "mypassword") {
+      
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    } else {
 
+      alert("Invalid username or password");
+    }
+  }
 
 window.addEventListener('load', () => {
     // Login Function
@@ -45,10 +60,6 @@ api.fetchAll(/* User ID on It.4 */).then(data => {
     checkInput();
   })
 })
-
-
-
-
 
 function parseDashboardData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
@@ -84,10 +95,6 @@ function loadDestinationsDropBar() {
         destinationInput.appendChild(option);
    });
 
-
-
-
-
    submitButton.addEventListener('click', function(event) {
     event.preventDefault(); 
     const destinationSelection = document.getElementById('destination').value
@@ -107,9 +114,7 @@ function loadDestinationsDropBar() {
     location.href = location.href;
     
     alert("Trip Submitted");
-});
-      
-
+  });
 }
 
 function checkInput(){
@@ -135,7 +140,7 @@ function checkInput(){
          inputSum[1]=0;
      }});
 
-     const durationInCheck = document.getElementById('duration')
+    const durationInCheck = document.getElementById('duration')
     durationInCheck.addEventListener('input', function() {
      if (durationInCheck.value.length > 0){
          inputSum[2]=1;
@@ -150,16 +155,17 @@ function checkInput(){
         let estimatedLodgingCostPerDay = 0
         let estimatedFlightCostPerPerson = 0
         destinations.destinations.filter((destination) => {
-            if(destination.destination == destinationInCheck.value){
-                estimatedFlightCostPerPerson = destination.estimatedFlightCostPerPerson
-                estimatedLodgingCostPerDay = destination.estimatedLodgingCostPerDay
-            }
+        if(destination.destination == destinationInCheck.value){
+            estimatedFlightCostPerPerson = destination.estimatedFlightCostPerPerson
+            estimatedLodgingCostPerDay = destination.estimatedLodgingCostPerDay
+          }
         })
         const tripTotal = (estimatedLodgingCostPerDay * durationInCheck.value) + (estimatedFlightCostPerPerson * travelersInCheck.value)
         tripTotal + (tripTotal * 0.10) 
         document.getElementById('tripTotal').innerHTML = `$${tripTotal}`
     
      }
+     
     
       
  }

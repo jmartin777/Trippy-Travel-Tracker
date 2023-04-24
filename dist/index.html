@@ -10,6 +10,17 @@
   <title>Trippy Travels 🚀</title>
 </head>
 <body>
+  <div id="login-form">
+    <form action="#" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Submit" onclick="login(event)">
+    </form>
+  </div>
+  
+  <div id="content" style="display: none;">
 <section id="left">
   <h3>All of My Trips</h3>
 
@@ -40,6 +51,7 @@
     <button type="submit"value="submit" id="submit">Submit</button>
     
   </form>
+</div>
 </div>
 
   <script src="bundle.js"></script>
