@@ -1,12 +1,24 @@
 class Booking{
     constructor() {
         this.userID ='';
-        this.destinationID = '';
-        this.destination = '';
-        this.estimatedLodgingCostPerDay = 0;
-        this.estimatedFlightCostPerPerson = 0;
-        this.image = '';
-        this.alt = '';
+        this.destinationID = [];
+        this.destination = [];
+        this.estimatedLodgingCostPerDay = [];
+        this.estimatedFlightCostPerPerson = [];
+        this.image = [];
+        this.alt = [];
+    }
+
+    loadData(userID,inObj){
+        this.userID = userID;
+        inObj.destinations.forEach(dest => {
+            this.destinationID.push(dest.id); 
+            this.destination.push(dest.destination);
+            this.estimatedLodgingCostPerDay.push(dest.estimatedLodgingCostPerDay); 
+            this.estimatedFlightCostPerPerson.push(dest.estimatedFlightCostPerPerson); 
+            this.image.push(dest.image); 
+            this.alt.push(dest.alt); 
+        });
     }
 }
 
@@ -23,6 +35,17 @@ class Booking{
 
 //Once I submit the trip request, it will show on my dashboard as “pending” so that the travel agency can approve or deny it.
 
-//{id: <number>, userID: <number>, destinationID: <number>, travelers: <number>, date: <string 'YYYY/MM/DD'>, duration: <number>, status: <string 'approved' or 'pending'>, suggestedActivities: <array of strings>}
-
+//
+/*
+{
+    id: <number>,
+    userID: <number>,
+    destinationID: <number>,
+    travelers: <number>,
+    date: <string 'YYYY/MM/DD'>,
+    duration: <number>,
+    status: <string 'approved' or 'pending'>,
+    suggestedActivities: <array of strings>
+}
+*/
 export default Booking
