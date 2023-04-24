@@ -1,9 +1,5 @@
-//http://localhost:3001/api/v1/travelers/<id>
-import Api from './apiCalls';
-
 class Dashboard {
   constructor() {
-    this.api = new Api("http://localhost:3001/api/v1/");
     this.travelerOBJ = {};
     this.userID = 0;
     this.userName = "";
@@ -55,7 +51,7 @@ class Dashboard {
     
     this.futureDates =this.approvedTrips.filter(date => date > today || date === today)
     .sort((a,b) => new Date(a) - new Date(b))
-    console.log(today)
+    // console.log(today)
   }
 
   sortTripsByStatus(){
