@@ -19,6 +19,8 @@ class Dashboard {
     this.estimatedFlightCostPerPerson = [];
     this.image = [];
     this.alt = [];
+    this.approvedTrips = []
+    this.pendingTrips = []
   }
 
   loadUser(inUserID, inObj) {
@@ -46,23 +48,30 @@ class Dashboard {
     return result;
   }
 
-  sortTrips() {
+  sortTripsByDate() {
     const today = new Date().toISOString().split('T')[0].replace("-","/").replace("-","/");
-    this.pastDates = this.date.filter(date => date < today)
+    this.pastDates = this.approvedTrips.filter(date => date < today)
     .sort((a,b) => new Date(b) - new Date(a))
-    this.presentDates = this.date.filter(date => date === today)
-    .sort((a,b) => new Date(b) - new Date(a))
-    this.futureDates =this.date.filter(date => date > today)
+    
+    this.futureDates =this.approvedTrips.filter(date => date > today || date === today)
     .sort((a,b) => new Date(a) - new Date(b))
     console.log(today)
   }
-    calculateTotalSpent() {
-       this.totalCosts = this.travelers.map((num, index) => (num * this.estimatedFlightCostPerPerson[index]) + (this.estimatedLodgingCostPerDay[index] * this.duration[index]))
-       .reduce((acc, val)=> acc + val,0)
 
-       this.agentFees = this.totalCosts * 0.10;
-   
+  sortTripsByStatus(){
+    
+    const result = this.date.forEach((date,i) => {
+        if(this.status[i] === "approved"){
+            this.approvedTrips.push(date)
+        }else if(this.status[i] === "pending") {
+            this.pendingTrips.push(date)
+        } else {
+            console.log(`Approval Check Error on customer date:${i}`)
+        }
+    }) 
+    this.status
   }
+    
 
   loadUserTrips(inObj) {
     const result = inObj.trips.forEach((trip) => {
@@ -125,25 +134,33 @@ class Dashboard {
     });
   }
   
-  makeDateTable() {
-    const table = document.createElement('table');
-    const headerRow = document.createElement('tr');
-    headerRow.innerHTML = '<th>Destination|</th><th>Past Dates|</th><th>Present Dates|</th><th>Future Dates|</th>';
-    table.appendChild(headerRow);
-    // Loop through each date and create a row with the corresponding name
-    this.date.forEach((date, i) => {
-        const name = this.destination[i].split(",")[0] ? this.destination[i].split(",")[0]  : '';
-        const pastDate = this.pastDates.includes(date) ? date : '';
-        const presentDate = this.presentDates.includes(date) ? date : '';
-        const futureDate = this.futureDates.includes(date) ? date : '';
+    makeDateTable() {
+        const table = document.createElement('table');
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = '<th>Destination|</th><th>Past Dates|</th><th>Upcoming Dates|</th><th>Pending Dates|</th>';
+        table.appendChild(headerRow);
+        // Loop through each date and create a row with the corresponding name
+        this.date.forEach((date, i) => {
+            const name = this.destination[i].split(",")[0] ? this.destination[i].split(",")[0]  : '';
+            const pastDate = this.pastDates.includes(date) ? date : '';
+            const presentDate = this.futureDates.includes(date) ? date : '';
+            const futureDate = this.pendingTrips.includes(date) ? date : '';
 
-        const row = document.createElement('tr');
-        row.innerHTML = `<td>${name}</td><td>${pastDate}</td><td>${presentDate}</td><td>${futureDate}</td>`;
-        table.appendChild(row);
-    });
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${name}</td><td>${pastDate}</td><td>${presentDate}</td><td>${futureDate}</td>`;
+            table.appendChild(row);
+        });
 
-    document.getElementById('date-table').appendChild(table);
+        document.getElementById('date-table').appendChild(table);
     }
+
+    calculateTotalSpent() {
+        this.totalCosts = this.travelers.map((num, index) => (num * this.estimatedFlightCostPerPerson[index]) + (this.estimatedLodgingCostPerDay[index] * this.duration[index]))
+        .reduce((acc, val)=> acc + val,0)
+ 
+        this.agentFees = this.totalCosts * 0.10;
+    
+   }
 }
 
 export default Dashboard;
