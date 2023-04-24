@@ -12,7 +12,7 @@ let trips
 import Dashboard from './dashBoard';
 import Booking from './booking';
 import Api from './apiCalls';
-// import './css/styles.css';
+import './css/styles.css';
 import './images/turing-logo.png';
 import './images/AdobeStock_571093886.jpg';
 import './images/login-button.png';
@@ -52,7 +52,7 @@ api.fetchAll(/* User ID on It.4 */).then(data => {
 
 function parseDashboardData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
-    dashboard.loadUser(22,travelers);
+    dashboard.loadUser(randomUser,travelers);
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard);
@@ -101,7 +101,10 @@ submitButton.addEventListener('click', function(event) {
         }
     })
     console.log(booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
+
      api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
+
+     location.href = location.href;
   });
       
 
