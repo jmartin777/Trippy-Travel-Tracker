@@ -1,6 +1,6 @@
 class Booking{
     constructor() {
-        this.userID ='';
+        this.userID = 0;
         this.destinationID = [];
         this.destination = [];
         this.estimatedLodgingCostPerDay = [];
@@ -9,9 +9,9 @@ class Booking{
         this.alt = [];
     }
 
-    loadData(userID,inObj){
+    loadData(userID,inObj1,inObj2){
         this.userID = userID;
-        inObj.destinations.forEach(dest => {
+        inObj1.destinations.forEach(dest => {
             this.destinationID.push(dest.id); 
             this.destination.push(dest.destination);
             this.estimatedLodgingCostPerDay.push(dest.estimatedLodgingCostPerDay); 
@@ -19,6 +19,26 @@ class Booking{
             this.image.push(dest.image); 
             this.alt.push(dest.alt); 
         });
+        
+            this.numOfTrips = inObj2.trips.length
+            console.log(inObj2)
+
+
+       
+    }
+
+    createBookingObj(userID, destinationID, travelers, date, duration) {
+        const bookingObj = {
+            'id': this.numOfTrips + 1,
+            'userID': userID,
+            'destinationID': destinationID, 
+            'travelers': travelers,
+            'date': date,
+            'duration': duration,
+            'status': 'pending',
+            'suggestedActivities': []
+        }
+        return bookingObj
     }
 }
 

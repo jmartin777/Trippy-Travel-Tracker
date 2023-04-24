@@ -57,7 +57,11 @@ function writeDashboardDisplay(){
 }
 
 function parseBookingPageData(){
-    booking.loadData(dashboard.userID,destinations)
+    booking.loadData(dashboard.userID,destinations,trips)
+    
+    //post Booking with userID, destinationID, travelers, date, duration
+    //api.postObj("trips", booking.createBookingObj(24, 43, 2, "2023/03/16", 4))
+    
     console.log(booking)
 }
 

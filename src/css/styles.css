@@ -21,18 +21,16 @@ body {
   background-repeat: no-repeat;
   background-size: fill;
   width: auto;
-  height: 1000px;
-  
+  height: 2000px;
   min-height: 100%;
 }
 #tripArea {
   margin: 20px 10px;
   padding: 32px 32px;
-  
 }
+
 #totalsArea {
-  margin: 75px 10px;
-  
+  margin: 75px 10px;  
 }
 
 #date-table {
