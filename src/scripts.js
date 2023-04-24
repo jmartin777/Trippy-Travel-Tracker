@@ -34,6 +34,7 @@ const submitButton = document.getElementById("submit");
 window.addEventListener('load', () => {
     // Login Function
 api.fetchAll(/* User ID on It.4 */).then(data => {
+    
     travelers = data[0];
     trips = data[1];
     destinations = data[2];
@@ -41,7 +42,7 @@ api.fetchAll(/* User ID on It.4 */).then(data => {
     writeDashboardDisplay();
     parseBookingPageData();
     loadDestinationsDropBar();
-    
+    checkInput();
   })
 })
 
@@ -51,7 +52,7 @@ api.fetchAll(/* User ID on It.4 */).then(data => {
 
 function parseDashboardData(){
     const randomUser = Math.floor(Math.random() * travelers.travelers.length);
-    dashboard.loadUser(randomUser,travelers);
+    dashboard.loadUser(22,travelers);
     dashboard.loadUserTrips(trips);
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard);
@@ -83,7 +84,11 @@ function loadDestinationsDropBar() {
         destinationInput.appendChild(option);
    });
 
-   submitButton.addEventListener('click', function(event) {
+
+
+
+
+submitButton.addEventListener('click', function(event) {
     event.preventDefault(); 
     const destinationSelection = document.getElementById('destination').value
     const dateInput = document.getElementById('date').value;
@@ -95,17 +100,65 @@ function loadDestinationsDropBar() {
             destinationIDSelection = destination.id;
         }
     })
-
-
-    
-    //post Booking with userID, destinationID, travelers, date, duration
     console.log(booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
      api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
   });
-        
+      
+
 }
 
+function checkInput(){
+    let inputSum = [0,0,0]; 
+    let calculateReady = false;
+    const destinationInCheck = document.getElementById('destination')
+    destinationInCheck.addEventListener('input', function() {
+     if (destinationInCheck.value.length > 0){
+         inputSum[0]=1;
+         calculateReady= inputSum.every((num) => num ===1)
+         if(calculateReady){calculateBooking()}
+     }else{
+         inputSum[0]=0;
+     }});
 
+     const travelersInCheck = document.getElementById('travelers')
+     travelersInCheck.addEventListener('input', function() {
+     if (travelersInCheck.value.length > 0){
+         inputSum[1]=1;
+         calculateReady = inputSum.every((num) => num ===1)
+         if(calculateReady){calculateBooking()}
+     }else{
+         inputSum[1]=0;
+     }});
+
+     const durationInCheck = document.getElementById('duration')
+    durationInCheck.addEventListener('input', function() {
+     if (durationInCheck.value.length > 0){
+         inputSum[2]=1;
+         calculateReady = inputSum.every((num) => num ===1)
+         if(calculateReady){calculateBooking()}
+     }else{
+         inputSum[2]=0;
+     }});
+
+     
+    function calculateBooking(){
+        let estimatedLodgingCostPerDay = 0
+        let estimatedFlightCostPerPerson = 0
+        destinations.destinations.filter((destination) => {
+            if(destination.destination == destinationInCheck.value){
+                estimatedFlightCostPerPerson = destination.estimatedFlightCostPerPerson
+                estimatedLodgingCostPerDay = destination.estimatedLodgingCostPerDay
+            }
+        })
+        const tripTotal = (estimatedLodgingCostPerDay * durationInCheck.value) + (estimatedFlightCostPerPerson * travelersInCheck.value)
+        tripTotal + (tripTotal * 0.10) 
+        document.getElementById('tripTotal').innerHTML = `$${tripTotal}`
+    
+     }
+         
+     
+ }
+ 
 
 
 
