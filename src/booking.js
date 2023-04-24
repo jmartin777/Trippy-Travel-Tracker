@@ -36,9 +36,13 @@ class Booking{
             'status': 'pending',
             'suggestedActivities': []
         }
+        this.showAlert
         return bookingObj
+        
     }
 }
+    
+    
 
 //date, duration, number of travelers and choose from a list of destinations
 //User Input :date , duration, travelers,Destination

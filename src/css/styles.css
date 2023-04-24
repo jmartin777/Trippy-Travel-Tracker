@@ -54,8 +54,6 @@ body {
  
   width: 40%;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   margin-left: 20px;
   background-image: url('/dist/images/AdobeStock_wide.png');
   background-repeat: no-repeat;
@@ -135,6 +133,18 @@ h3{
   height: 50px;
   width: 100px;
 
+}
+
+#login-form {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#content {
+  display: none;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 
