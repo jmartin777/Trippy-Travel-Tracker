@@ -1,11 +1,8 @@
 class Api {
-    //Create a reference to the API class
-    //Set the Base Url from the argument
     constructor(inUrl) {
         this.url = inUrl;
     }
-    //Retrieve Data from a given endpoint
-   
+
     fetchData = (url) => {
         return fetch(url)
         .then(response => response.json())
@@ -18,14 +15,7 @@ class Api {
         this.fetchData('http://localhost:3001/api/v1/destinations'),
         ]);
     } 
-  
-    //Post an JSON Object to the Base URL using the given Endpoint and OBJ 
-    /*  const data = { name: 'John Doe', email: 'johndoe@example.com' };
-        postObj('travelers', data)
-        .then(result => console.log(result))
-        .catch(error => console.error(error));
-    */
-    
+
     postObj(endpoint, data){
         console.log(this.url + endpoint)
         fetch(this.url + endpoint, {
@@ -41,7 +31,6 @@ class Api {
 
         };
 
-    //Delete Trip By ID 
     deleteTrip(tripID){
         postResult = (endpoint, data) => {
             return fetch(this.url + trips, {
