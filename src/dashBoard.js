@@ -55,7 +55,6 @@ class Dashboard {
   }
 
   sortTripsByStatus(){
-    
     const result = this.date.forEach((date,i) => {
         if(this.status[i] === "approved"){
             this.approvedTrips.push(date)
@@ -68,7 +67,6 @@ class Dashboard {
     this.status
   }
     
-
   loadUserTrips(inObj) {
     const result = inObj.trips.forEach((trip) => {
       //console.log(trip.userID === this.userID)
@@ -84,17 +82,15 @@ class Dashboard {
     return result;
   }
 
-
-  
   loadUserTripsTest(tripsData) {
     const userTrips = tripsData.trips.filter((trip) => trip.userID === this.userId);
 
-    this.destinationID = userTrips.map((trip) => trip.destinationID);
-    this.travelers = userTrips.map((trip) => trip.travelers);
-    this.date = userTrips.map((trip) => trip.date);
-    this.duration = userTrips.map((trip) => trip.duration);
-    this.status = userTrips.map((trip) => trip.status);
-    this.suggestedActivities = userTrips.map((trip) => trip.suggestedActivities);
+      this.destinationID = userTrips.map((trip) => trip.destinationID);
+      this.travelers = userTrips.map((trip) => trip.travelers);
+      this.date = userTrips.map((trip) => trip.date);
+      this.duration = userTrips.map((trip) => trip.duration);
+      this.status = userTrips.map((trip) => trip.status);
+      this.suggestedActivities = userTrips.map((trip) => trip.suggestedActivities);
   }
 
   loadUserDestinations(inObj) {
@@ -111,13 +107,13 @@ class Dashboard {
       });
     });
   }
+
   loadUserDestinationsTest(inObj) {
     this.destination = [];
     this.estimatedLodgingCostPerDay = [];
     this.estimatedFlightCostPerPerson = [];
     this.image = [];
     this.alt = [];
-  
     this.destinationID.forEach((destinationID) => {
       const destination = inObj.destinations.find(dest => dest.id === destinationID);
       if (destination) {
@@ -137,25 +133,21 @@ class Dashboard {
         table.appendChild(headerRow);
         // Loop through each date and create a row with the corresponding name
         this.date.forEach((date, i) => {
-            const name = this.destination[i].split(",")[0] ? this.destination[i].split(",")[0]  : '';
-            const pastDate = this.pastDates.includes(date) ? date : '';
-            const presentDate = this.futureDates.includes(date) ? date : '';
-            const futureDate = this.pendingTrips.includes(date) ? date : '';
-
-            const row = document.createElement('tr');
-            row.innerHTML = `<td>${name}</td><td>${pastDate}</td><td>${presentDate}</td><td>${futureDate}</td>`;
-            table.appendChild(row);
-        });
-
+          const name = this.destination[i].split(",")[0] ? this.destination[i].split(",")[0]  : '';
+          const pastDate = this.pastDates.includes(date) ? date : '';
+          const presentDate = this.futureDates.includes(date) ? date : '';
+          const futureDate = this.pendingTrips.includes(date) ? date : '';
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${name}</td><td>${pastDate}</td><td>${presentDate}</td><td>${futureDate}</td>`;
+          table.appendChild(row);
+      });
         document.getElementById('date-table').appendChild(table);
     }
 
     calculateTotalSpent() {
         this.totalCosts = this.travelers.map((num, index) => (num * this.estimatedFlightCostPerPerson[index]) + (this.estimatedLodgingCostPerDay[index] * this.duration[index]))
         .reduce((acc, val)=> acc + val,0)
- 
         this.agentFees = this.totalCosts * 0.10;
-    
    }
 }
 

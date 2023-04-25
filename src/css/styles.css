@@ -2,13 +2,13 @@ html *{
   font-size: 1em !important;
      color: #ff8c28 !important;
      font-family: Monaco !important;
+     text-align: center;
      font-weight: normal;
-     text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000,-1px 2px 0 #000000, 1px 2px 0 #000000;
-    
+     text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000,-1px 2px 0 #000000, 1px 2px 0 #000000; 
   }
 
 body {
-  background-image: url('/dist/images/AdobeStock_571093886.jpg');
+  background-image: url('/dist/images/resizedmain.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -16,28 +16,39 @@ body {
   height: 100%;
 }
 
-#left{
-  margin: 65px 15px;
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  background-image: url('/dist/images/AdobeStock_wide.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: scroll;
+  flex: 50%;
+  padding-top: 1%;
+  padding-left: 3%;
+  height: 800px; /* Should be removed. Only for demonstration */
+  margin: 5px;
+}
+
+/* #left{
+   
   background-image: url('/dist/images/AdobeStock_wide.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 47%;
   height: 505px;
   
- 
-}
-#tripArea {
-  margin: 20px 10px;
-  padding: 32px 32px;
-  
+} */
 
-}
 
-#totalsArea {
-  margin: 75px 250px; 
 
- 
-}
 
 #total-spent{
   margin: 0px 0px;
@@ -45,13 +56,10 @@ body {
 
 #date-table {
   padding: 0px;
-  margin: 15px;
-  
-
+  margin: 5%;
 }
 
-#trip-request {
- 
+/* #trip-request {
   width: 40%;
   padding: 20px;
   margin-left: 20px;
@@ -59,15 +67,14 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   width: 26%;
-  height: 500px;
-  
-  
-}
+  height: 500px;  
+} */
 
 th{
   background-color: #58cff0;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 h2{
@@ -77,6 +84,7 @@ h2{
   width: 140px;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 h3{
@@ -86,6 +94,8 @@ h3{
   border-radius: 25%;
   border: groove;
   width: 187px;
+  align-items: center;
+  padding: 2%;
   
 }
 
@@ -94,6 +104,7 @@ h3{
   background-color: #58cff0;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 #id{
@@ -101,6 +112,7 @@ h3{
   background-color: #58cff0;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 #destination{
@@ -108,6 +120,7 @@ h3{
   background-color: #58cff0;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 
 }
 
@@ -116,6 +129,7 @@ h3{
   background-color: #58cff0;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 #travelers{
@@ -123,6 +137,7 @@ h3{
   background-color: #58cff0;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 
 }
 #submit{
@@ -133,28 +148,32 @@ h3{
   border: groove;
   height: 50px;
   width: 100px;
-
+  align-items: center;
 }
 
 #login-form {
   margin: 20px auto;
   text-align: center;
+  align-items: center;
 }
 
 #username{
   background-color: transparent;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 text{
   background-color: transparent;
+  align-items: center;
 }
 
 #password{
   background-color: transparent;
   border-radius: 25%;
   border: groove;
+  align-items: center;
 }
 
 #submit2{
@@ -163,6 +182,7 @@ text{
   border-radius: 25%;
   border: groove;
   margin: 12px;
+  align-items: center;
 }
 
 #text{
