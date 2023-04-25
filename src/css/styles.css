@@ -22,6 +22,7 @@ body {
 
 .row {
   display: flex;
+  
 }
 
 /* Create two equal columns that sits next to each other */
@@ -32,7 +33,7 @@ body {
   background-attachment: scroll;
   flex: 50%;
   padding-top: 1%;
-  padding-left: 3%;
+  padding-left: 1%;
   height: 800px; /* Should be removed. Only for demonstration */
   margin: 5px;
 }
@@ -47,16 +48,13 @@ body {
   
 } */
 
-
-
-
 #total-spent{
   margin: 0px 0px;
 }
 
 #date-table {
   padding: 0px;
-  margin: 5%;
+  margin: 1%;
 }
 
 /* #trip-request {
@@ -150,6 +148,14 @@ h3{
   width: 100px;
   align-items: center;
 }
+
+button#submit3{
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  padding-top: 6%;
+}
+
 
 #login-form {
   margin: 20px auto;

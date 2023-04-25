@@ -27,6 +27,7 @@ const booking = new Booking();
 
 const destinationInput = document.getElementById('destination')
 const submitButton = document.getElementById("submit");
+const logoutButton = document.getElementById("submit3");
 
 
   function login() {
@@ -35,6 +36,7 @@ const submitButton = document.getElementById("submit");
     
     if (username === "traveler50" && password === "travel" ) {
         document.cookie = "sessionId=1; path=/";
+    document.getElementById("userDisplay").innerHTML = 'traveler50';
       document.getElementById("login-form").style.display = "none";
       document.getElementById("content").style.display = "block";
     } else {
@@ -43,6 +45,10 @@ const submitButton = document.getElementById("submit");
     }
     console.log(document.cookie)
   }
+  logoutButton.addEventListener('click', function(event) {
+    document.cookie = "sessionId=0; path=/";
+    location.href = location.href;
+  });
 
 window.addEventListener('load', () => {
     document.querySelector("#login-form form").addEventListener("submit", function(event) {
@@ -54,9 +60,10 @@ window.addEventListener('load', () => {
         //document.cookie = `sessionId=1 , userId=${username} ; path=/`;
         document.getElementById("login-form").style.display = "none";
         document.getElementById("content").style.display = "block";
+        document.getElementById("userDisplay").innerHTML = 'traveler50';
     }
     console.log(document.cookie==="sessionId=1")
-    api.fetchAll(/* User ID on It.4 */).then(data => {
+    api.fetchAll().then(data => {
     travelers = data[0];
     trips = data[1];
     destinations = data[2];
@@ -100,7 +107,7 @@ function loadDestinationsDropBar() {
         destinationInput.appendChild(option);
    });
 
-   submitButton.addEventListener('click', function(event) {
+submitButton.addEventListener('click', function(event) {
     event.preventDefault(); 
     const destinationSelection = document.getElementById('destination').value
     const dateInput = document.getElementById('date').value;
@@ -170,7 +177,11 @@ function checkInput(){
         const tripTotal = (estimatedLodgingCostPerDay * durationInCheck.value) + (estimatedFlightCostPerPerson * travelersInCheck.value)
         tripTotal + (tripTotal * 0.10) 
         document.getElementById('tripTotal').innerHTML = `$${tripTotal}`
-     }    
+     } 
+     
+     function displayUserOnDashboard(){
+        
+     }
  }
  
 
