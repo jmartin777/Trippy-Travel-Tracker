@@ -13,6 +13,7 @@
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
+<image src=https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzYwYThiN2NjYWY2YjBhYjJmYmJhYTgwZWMyZDc0ZjU2NTc5YzkyZSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/aUZrIxZHHZMT4j8xL4/giphy.gif>
 
 
 ### Context:
