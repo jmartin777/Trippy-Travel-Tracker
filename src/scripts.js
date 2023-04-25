@@ -13,12 +13,12 @@ import Dashboard from './dashBoard';
 import Booking from './booking';
 import Api from './apiCalls';
 import './css/styles.css';
-import './images/turing-logo.png';
-import './images/AdobeStock_571093886.jpg';
 import './images/login-button.png';
 import './images/AdobeStock_wide.png';
 import './images/AdobeStock_tall.png';
 import './images/AdobeStock_430930840.png';
+import './images/resizedmain.jpg';
+
 
 const api = new Api("http://localhost:3001/api/v1/");
 const dashboard = new Dashboard();
@@ -75,8 +75,7 @@ function parseDashboardData(){
     dashboard.loadUserDestinations(destinations);
     console.log(dashboard);
     dashboard.sortTripsByStatus();
-    dashboard.sortTripsByDate();
-    
+    dashboard.sortTripsByDate();  
 }
 
 function writeDashboardDisplay(){
@@ -84,7 +83,6 @@ function writeDashboardDisplay(){
     dashboard.calculateTotalSpent(); 
     document.getElementById('agentFees').innerHTML = `$${dashboard.agentFees}`;
     document.getElementById('totalSpent').innerHTML = `$${dashboard.totalCosts + dashboard.agentFees}`;
-
 }
 
 function parseBookingPageData(){
@@ -111,7 +109,7 @@ function loadDestinationsDropBar() {
     let destinationIDSelection = 0;
     destinations.destinations.filter((destination) => {
         if(destination.destination == destinationSelection){
-            destinationIDSelection = destination.id;
+           destinationIDSelection = destination.id;
         }
     })
     console.log(booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
@@ -119,10 +117,10 @@ function loadDestinationsDropBar() {
     api.postObj("trips", booking.createBookingObj(dashboard.userID, destinationIDSelection, travelersInput, dateInput.replace("-","/").replace("-","/"), durationInput))
 
     location.href = location.href;
-    
     alert("Trip Submitted");
-  });
-}
+
+    });
+  }
 
 function checkInput(){
     let inputSum = [0,0,0]; 
@@ -135,7 +133,8 @@ function checkInput(){
          if(calculateReady){calculateBooking()}
      }else{
          inputSum[0]=0;
-     }});
+        }
+    });
 
      const travelersInCheck = document.getElementById('travelers')
      travelersInCheck.addEventListener('input', function() {
@@ -145,7 +144,8 @@ function checkInput(){
          if(calculateReady){calculateBooking()}
      }else{
          inputSum[1]=0;
-     }});
+        }
+    });
 
     const durationInCheck = document.getElementById('duration')
     durationInCheck.addEventListener('input', function() {
@@ -155,9 +155,9 @@ function checkInput(){
          if(calculateReady){calculateBooking()}
      }else{
          inputSum[2]=0;
-     }});
+        }
+    });
 
-     
     function calculateBooking(){
         let estimatedLodgingCostPerDay = 0
         let estimatedFlightCostPerPerson = 0
@@ -170,11 +170,7 @@ function checkInput(){
         const tripTotal = (estimatedLodgingCostPerDay * durationInCheck.value) + (estimatedFlightCostPerPerson * travelersInCheck.value)
         tripTotal + (tripTotal * 0.10) 
         document.getElementById('tripTotal').innerHTML = `$${tripTotal}`
-    
-     }
-     
-    
-      
+     }    
  }
  
 

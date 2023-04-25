@@ -19,11 +19,8 @@ class Booking{
             this.image.push(dest.image); 
             this.alt.push(dest.alt); 
         });
-        
             this.numOfTrips = inObj2.trips.length
-            // console.log(inObj2) 
     }
-
 
     createBookingObj(userID, destinationID, travelers, date, duration) {
         const bookingObj = {
@@ -37,8 +34,7 @@ class Booking{
             'suggestedActivities': []
         }
         this.showAlert
-        return bookingObj
-        
+        return bookingObj     
     }
 }
     

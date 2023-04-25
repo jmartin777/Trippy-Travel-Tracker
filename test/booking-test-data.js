@@ -1,4 +1,5 @@
-const trips = { trips:[
+const trips = { 
+  trips:[
       {
         "id": 1,
         "userID": 44,
@@ -28,13 +29,11 @@ const trips = { trips:[
         "duration": 17,
         "status": "approved",
         "suggestedActivities": []
-      },
-      
+      },     
 ]}
 
-
-const destinations = {destinations:[
-
+const destinations = {
+  destinations:[
     {
       "id": 1,
       "destination": "Lima, Peru",
