@@ -1,100 +1,36 @@
-# Webpack Starter Kit
+# Trippy-Travel-Tracker 
+
+### Abstract:
+[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+
+ I built ,styled and provided functionality using HTML, Javascript and CSS togethor to create a website application. Within this website, the user has the option to Login. Once the user  has logged in,  the user has the capability to view all past, upcomming, and pending flights. Users can also input their travel details such as the destination, travel dates, duration of trip, number of travelers, and any other relevant information. This information is used to generate a list of pending flights that meet the user's criteria. Once the user selects a flight with all inputs, they can proceed to see a payment table where they can view there pending flights and overall costs of everything.
+
+### Installation Instructions:
+[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+
+ I would first provide them with the link to the main repository in which all working branches have been merged. Ask them to access the SSH code and 'git clone' down to their local terminal. From there they would open this directory in VS code / Atom. To access the site they would type  'open index.html' in their termianl to retrieve the HTML site itself. 
+
+### Preview of App:
+[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
 
-## Clone This Repo
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+### Context:
+[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
+This project was given to us on 04/18/23 and had to be completed by 04/25/23.We were on our 3rd week of the Mod2 course- it took 6 days and a total of 23-26 hours on this project. 
 
-Now try to commit something (just add a line in the README) and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+### Contributors:
+[//]: <> (Who worked on this application? Link to their GitHubs.)
 
-## Setup
+https://github.com/jmartin777. - Joshua Martin
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo.
+### Learning Goals:
+[//]: <> (What were the learning goals of this project? What tech did you work with?)
 
-Then install the library dependencies. Run:
+The learning goals was to be able to build an HTML layout that was functionable, stylized with CSS and functionality using Javascript. In doing so I was able to apply my knowledge and further the understanding of 'Flex' within CSS styles which helped me with the website layout and organzation of travel-tracker. Then I would apply insight into what the site was able to do and what features I would half to write functionality for in order for it to operate as a "Travel-Tracker".In order to manipulate the DOM from my Javascript , I had to maintain the order of 'parent-child' elements in my HTML and pinpoint them through Javascript and CSS. JavaScript would is used to manipulate the Document Object Model (DOM). This allowed me to dynamically update the content of the website in response to user actions. 
 
-```bash
-npm install
-```
+### Wins + Challenges:
+[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with the Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
-
-## Where to Add Your Code
-
-### JavaScript
-
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
-
-**Create all of your feature code files in the `src` directory.**
-
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
-
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
-
-### HTML
-
-Add the HTML you need in the `index.html` file in the `./dist` directory. There is some boilerplate HTML that exists from the start that you can modify.
-
-### Images
-
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`scripts.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
-npm start
-```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
-```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory.
-
-## Webpack?
-
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
-
-## Deploying to GitHub Pages
-
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
+Successfully building a functional and stylized travel-tracker website using HTML, CSS, and JavaScript within a relatively short time frame.I feel I gainined a deeper understanding of CSS's "Flex" property and how it can be used to create flexible and responsive website layouts.Developing problem-solving and critical thinking skills identified for the necessary features and functionality for the website which worked to implement them using JavaScript.Managing time effectively to complete the project within the given deadline of one week while still maintaining a level of quality in the code was challenging.Debugging and troubleshooting issues with the code, such as pinpointing errors in the HTML and JavaScript that were causing problems with the functionality of the website seemed to be a plateau within this project.Balancing the need for functionality with the need for aesthetic design is always a factor, ensuring that the website not only worked well but also looked visually appealing to users (and myself.)

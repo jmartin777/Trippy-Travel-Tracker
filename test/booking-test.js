@@ -36,6 +36,7 @@ describe('Booking', () => {
         expect(booking.image).to.deep.equal(["https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80","https://images.unsplash.com/photo-1560089168-6516081f5bf1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80","https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"]);
         expect(booking.alt).to.deep.equal(["overview of city buildings with a clear sky","city with boats on the water during the day time","opera house and city buildings on the water with boats"]);
     });
+    
   });
 
   describe('createBookingObj', () => {
