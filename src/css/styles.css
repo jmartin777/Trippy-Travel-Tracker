@@ -21,11 +21,9 @@ body {
 }
 
 .row {
-  display: flex;
-  
+  display: flex;  
 }
 
-/* Create two equal columns that sits next to each other */
 .column {
   background-image: url('/dist/images/AdobeStock_wide.png');
   background-repeat: no-repeat;
@@ -38,16 +36,6 @@ body {
   margin: 5px;
 }
 
-/* #left{
-   
-  background-image: url('/dist/images/AdobeStock_wide.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 47%;
-  height: 505px;
-  
-} */
-
 #total-spent{
   margin: 0px 0px;
 }
@@ -56,17 +44,6 @@ body {
   padding: 0px;
   margin: 1%;
 }
-
-/* #trip-request {
-  width: 40%;
-  padding: 20px;
-  margin-left: 20px;
-  background-image: url('/dist/images/AdobeStock_wide.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 26%;
-  height: 500px;  
-} */
 
 th{
   background-color: #58cff0;
@@ -87,7 +64,6 @@ h2{
 
 h3{
   background-color: transparent;
-  /* background-color: #58cff0; */
   font-weight: 500;
   border-radius: 25%;
   border: groove;

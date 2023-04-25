@@ -51,7 +51,6 @@ class Dashboard {
     
     this.futureDates =this.approvedTrips.filter(date => date > today || date === today)
     .sort((a,b) => new Date(a) - new Date(b))
-    // console.log(today)
   }
 
   sortTripsByStatus(){
@@ -69,7 +68,6 @@ class Dashboard {
     
   loadUserTrips(inObj) {
     const result = inObj.trips.forEach((trip) => {
-      //console.log(trip.userID === this.userID)
       if (trip.userID === this.userID) {
         this.destinationID.push(trip.destinationID);
         this.travelers.push(trip.travelers);
@@ -96,7 +94,6 @@ class Dashboard {
   loadUserDestinations(inObj) {
     const result0 = this.destinationID.forEach((destinationID) => {
       const result1 = inObj.destinations.forEach((destination) => {
-        //console.log(destination.id === destinationID)
         if (destination.id === destinationID) {
           this.destination.push(destination.destination);
           this.estimatedLodgingCostPerDay.push(destination.estimatedLodgingCostPerDay);

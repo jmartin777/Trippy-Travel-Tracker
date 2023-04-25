@@ -1,14 +1,7 @@
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
 let destinations
 let travelers
 let trips 
 
-// An example of how you tell webpack to use a CSS (SCSS) file
-
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import Dashboard from './dashBoard';
 import Booking from './booking';
 import Api from './apiCalls';
@@ -57,7 +50,6 @@ window.addEventListener('load', () => {
         
     });
     if (document.cookie==="sessionId=1"){
-        //document.cookie = `sessionId=1 , userId=${username} ; path=/`;
         document.getElementById("login-form").style.display = "none";
         document.getElementById("content").style.display = "block";
         document.getElementById("userDisplay").innerHTML = 'traveler50';
@@ -94,7 +86,6 @@ function writeDashboardDisplay(){
 
 function parseBookingPageData(){
     booking.loadData(dashboard.userID,destinations,trips)
-    
     console.log(booking)
 }
 
@@ -178,10 +169,6 @@ function checkInput(){
         tripTotal + (tripTotal * 0.10) 
         document.getElementById('tripTotal').innerHTML = `$${tripTotal}`
      } 
-     
-     function displayUserOnDashboard(){
-        
-     }
  }
  
 
